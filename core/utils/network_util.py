@@ -94,12 +94,20 @@ SMPL_PARENT = {
     11: 8, 12: 9, 13: 9, 14: 9, 15: 12, 16: 13, 17: 14, 18: 16, 19: 17, 20: 18, 
     21: 19, 22: 20, 23: 21}
 
+SMPL_PARENT = {0: -1, 1: 0, 2: 0, 3: 0, 4: 1, 5: 2, 6: 3, 7: 4, 8: 5, 9: 6, 10: 7, 
+               11: 8, 12: 9, 13: 9, 14: 9, 15: 12, 16: 13, 17: 14, 18: 16, 19: 17, 20: 18, 
+               21: 19, 22: 15, 23: 15, 24: 15, 25: 20, 26: 25, 27: 26, 28: 20, 29: 28, 
+               30: 29, 31: 20, 32: 31, 33: 32, 34: 20, 35: 34, 36: 35, 37: 20, 38: 37, 39: 38, 
+               40: 21, 41: 40, 42: 41, 43: 21, 44: 43, 45: 44, 46: 21, 47: 46, 48: 47, 49: 21, 
+               50: 49, 51: 50, 52: 21, 53: 52, 54: 53}
+
 
 class MotionBasisComputer(nn.Module):
     r"""Compute motion bases between the target pose and canonical pose."""
 
     def __init__(self, total_bones=24):
         super(MotionBasisComputer, self).__init__()
+        total_bones = 55
         self.total_bones = total_bones
 
     def _construct_G(self, R_mtx, T):

@@ -25,6 +25,28 @@ class DatasetArgs(object):
                 },
             })
 
+    if cfg.category == 'monohuman' and cfg.task == 'xhuman':
+        sub = cfg.subject
+
+        XHUMAN_DATA_PATH = "/home/tw554/MonoHuman/xhuman_data" # DO NOT USE RELATIVE PATH
+        dataset_attrs.update({
+            f"xhuman_{sub}_train": {
+                "dataset_path": f"{XHUMAN_DATA_PATH}/{sub}",
+                "keyfilter": cfg.train_keyfilter,
+                "ray_shoot_mode": cfg.train.ray_shoot_mode,
+                "index_a": cfg.index_a,
+                "index_b": cfg.index_b,
+            },
+            f"xhuman_{sub}_test": {
+                "dataset_path": f"{XHUMAN_DATA_PATH}/{sub}",
+                "keyfilter": cfg.test_keyfilter,
+                "ray_shoot_mode": 'image',
+                "src_type": 'zju_mocap',
+                "index_a": cfg.index_a,
+                "index_b": cfg.index_b,
+            },
+        })
+
     subjects = ['wild']
     if cfg.category == 'monohuman' and cfg.task == 'wild':
         for sub in subjects:

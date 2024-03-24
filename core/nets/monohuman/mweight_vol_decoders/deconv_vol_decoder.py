@@ -14,6 +14,7 @@ torch.cuda.manual_seed_all(seed_value)
 class MotionWeightVolumeDecoder(nn.Module):
     def __init__(self, embedding_size=256, volume_size=32, total_bones=24, pos_embed_fn=None, pos_embed_size=None, t_vertex=None, in_vertex=False):
         super(MotionWeightVolumeDecoder, self).__init__()
+        total_bones = 55
 
         self.total_bones = total_bones
         self.volume_size = volume_size

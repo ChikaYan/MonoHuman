@@ -35,6 +35,13 @@ from numpy import *
 
 SMPL_PARENT = torch.tensor([0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 12, 13, 14, 16, 17, 18, 19, 20, 21])
 
+SMPL_PARENT = torch.tensor([0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 
+            8, 9, 9, 9, 12, 13, 14, 16, 17, 18, 
+            19, 15, 15, 15, 20, 25, 26, 20, 28, 
+            29, 20, 31, 32, 20, 34, 35, 20, 37, 38, 
+            21, 40, 41, 21, 43, 44, 21, 46, 47, 21, 
+            49, 50, 21, 52, 53])
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 

@@ -20,6 +20,7 @@ class NonRigidMotionMLP(nn.Module):
 
         self.skips = [4] if skips is None else skips
         
+        condition_code_size = 162
         block_mlps = [nn.Linear(pos_embed_size+condition_code_size, 
                                 mlp_width), nn.ReLU()]
         

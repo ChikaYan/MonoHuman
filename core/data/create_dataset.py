@@ -35,14 +35,15 @@ def create_dataset(data_type='train'):
     if data_type == 'movement':
         args['skip'] = 1
     if data_type == 'progress':
-        total_train_imgs = _get_total_train_imgs(args['dataset_path'])
+        # total_train_imgs = _get_total_train_imgs(args['dataset_path'])
+        total_train_imgs = 100
         args['skip'] = total_train_imgs // 16
         args['maxframes'] = 16
     if data_type in ['freeview', 'tpose']:
         args['skip'] = cfg.render_skip
 
     dataset = _query_dataset(data_type)
-    dataset = dataset(**args)
+    dataset = dataset(data_type=data_type, **args)
     return dataset
 
 
